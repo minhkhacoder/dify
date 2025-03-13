@@ -105,7 +105,7 @@ const Answer: FC<AnswerProps> = ({
       <div className='shrink-0 relative w-10 h-10'>
         {answerIcon || <AnswerIcon />}
         {responding && (
-          <div className='absolute -top-[3px] -left-[3px] pl-[6px] flex items-center w-4 h-4 bg-white rounded-full shadow-xs border-[0.5px] border-gray-50'>
+          <div className='absolute -top-[3px] -left-[3px] pl-[6px] flex items-center w-4 h-4 bg-background-section-burn rounded-full shadow-xs border-[0.5px] border-divider-subtle'>
             <LoadingAnim type='avatar' />
           </div>
         )}
@@ -209,19 +209,19 @@ const Answer: FC<AnswerProps> = ({
             }
             {item.siblingCount && item.siblingCount > 1 && item.siblingIndex !== undefined && <div className="pt-3.5 flex justify-center items-center text-sm">
               <button
-                className={`${item.prevSibling ? 'opacity-100' : 'opacity-65'}`}
+                className={`${item.prevSibling ? 'opacity-100' : 'opacity-30'}`}
                 disabled={!item.prevSibling}
                 onClick={() => item.prevSibling && switchSibling?.(item.prevSibling)}
               >
-                <ChevronRight className="w-[14px] h-[14px] rotate-180 text-text-tertiary" />
+                <ChevronRight className="w-[14px] h-[14px] rotate-180 text-text-primary" />
               </button>
-              <span className="px-2 text-xs text-text-quaternary">{item.siblingIndex + 1} / {item.siblingCount}</span>
+              <span className="px-2 text-xs text-text-primary">{item.siblingIndex + 1} / {item.siblingCount}</span>
               <button
-                className={`${item.nextSibling ? 'opacity-100' : 'opacity-65'}`}
+                className={`${item.nextSibling ? 'opacity-100' : 'opacity-30'}`}
                 disabled={!item.nextSibling}
                 onClick={() => item.nextSibling && switchSibling?.(item.nextSibling)}
               >
-                <ChevronRight className="w-[14px] h-[14px] text-text-tertiary" />
+                <ChevronRight className="w-[14px] h-[14px] text-text-primary" />
               </button>
             </div>}
           </div>
